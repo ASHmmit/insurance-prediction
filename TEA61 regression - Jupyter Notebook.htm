@@ -1,0 +1,785 @@
+UPDATE Read the migration plan <https://jupyter-notebook.readthedocs.io/
+en/latest/migrate_to_notebook7.html> to Notebook 7 to learn about the
+new features and the actions to take if you are using extensions -
+Please note that updating to Notebook 7 might break some of your
+extensions.
+Don't show anymore
+Jupyter Notebook <http://localhost:8888/tree?
+token=9b7e5783785a5e154355c75d4c13b7326616a5506052352d>
+TEA61 regression Last Checkpoint: 17 minutes ago (autosaved) Current
+Kernel Logo Logout
+// Menu
+
+Python 3 (ipykernel) //
+
+/
+/
+
+/
+/
+
+/ /
+/
+
+/
+Trusted
+
+  * File <#>
+      o New NotebookDropdown <#>
+          + Python 3 (ipykernel) <#>
+      o Open... <#>
+      o
+      o Make a Copy... <#>
+      o Save as... <#>
+      o Rename... <#>
+      o Save and CheckpointCtrl-S <#>
+      o
+      o Revert to CheckpointDropdown <#>
+          + Monday, March 16, 2026 11:15 AM <#>
+      o
+      o Print Preview <#>
+      o Download asDropdown <#>
+          + AsciiDoc (.asciidoc) <#>
+          + HTML (.html) <#>
+          + LaTeX (.tex) <#>
+          + Markdown (.md) <#>
+          + Notebook (.ipynb) <#>
+          + PDF via LaTeX (.pdf) <#>
+          + reST (.rst) <#>
+          + Python (.py) <#>
+          + Reveal.js slides (.slides.html) <#>
+          + PDF via HTML (.html) <#>
+      o Deploy as <#>
+      o
+      o Trusted Notebook <#>
+      o
+      o Close and Halt <#>
+  * Edit <#>
+      o Cut CellsX <#>
+      o Copy CellsC <#>
+      o Paste Cells AboveShift-V <#>
+      o Paste Cells BelowV <#>
+      o Paste Cells & Replace <#>
+      o Delete CellsD,D <#>
+      o Undo Delete CellsZ <#>
+      o
+      o Split CellCtrl-Shift-Minus <#>
+      o Merge Cell Above <#>
+      o Merge Cell Below <#>
+      o
+      o Move Cell Up <#>
+      o Move Cell Down <#>
+      o
+      o Edit Notebook Metadata <#>
+      o
+      o Find and Replace <#>
+      o
+      o Cut Cell Attachments <#>
+      o Copy Cell Attachments <#>
+      o Paste Cell Attachments <#>
+      o
+      o Insert Image <#>
+  * View <#>
+      o Toggle Header <#>
+      o Toggle Toolbar <#>
+      o Toggle Line NumbersShift-L <#>
+      o Cell Toolbar <#>
+          + None <#>
+          + Edit Metadata <#>
+          + Raw Cell Format <#>
+          + Slideshow <#>
+          + Attachments <#>
+          + Tags <#>
+  * Insert <#>
+      o Insert Cell AboveA <#>
+      o Insert Cell BelowB <#>
+  * Cell <#>
+      o Run CellsCtrl-Enter <#>
+      o Run Cells and Select BelowShift-Enter <#>
+      o Run Cells and Insert BelowAlt-Enter <#>
+      o Run All <#>
+      o Run All Above <#>
+      o Run All Below <#>
+      o
+      o Cell Type <#>
+          + CodeY <#>
+          + MarkdownM <#>
+          + Raw NBConvertR <#>
+      o
+      o Current Outputs <#>
+          + ToggleO <#>
+          + Toggle ScrollingShift-O <#>
+          + Clear <#>
+      o All Output <#>
+          + Toggle <#>
+          + Toggle Scrolling <#>
+          + Clear <#>
+  * Kernel <#>
+      o InterruptI,I <#>
+      o Restart0,0 <#>
+      o Restart & Clear Output <#>
+      o Restart & Run All <#>
+      o Reconnect <#>
+      o Shutdown <#>
+      o
+      o Change kernel <#>
+          + Python 3 (ipykernel) <#>
+  * Widgets <#>
+      o Save Notebook Widget State <#>
+      o Clear Notebook Widget State <#>
+      o Download Widget State <#>
+      o Embed Widgets <#>
+  * Help <#>
+      o User Interface Tour <#>
+      o Keyboard ShortcutsH <#>
+      o Edit Keyboard Shortcuts <#>
+      o
+      o
+        /
+
+        / Notebook Help <http://nbviewer.jupyter.org/github/ipython/
+        ipython/blob/3.x/examples/Notebook/Index.ipynb>
+      o
+        /
+
+        / Markdown <https://help.github.com/articles/markdown-basics/>
+      o
+      o
+        /
+
+        /Python Reference <https://docs.python.org/3.11?v=20260316110317>
+      o
+        /
+
+        /IPython Reference <https://ipython.org/documentation.html?
+        v=20260316110317>
+      o
+        /
+
+        /NumPy Reference <https://docs.scipy.org/doc/numpy/reference/?
+        v=20260316110317>
+      o
+        /
+
+        /SciPy Reference <https://docs.scipy.org/doc/scipy/reference/?
+        v=20260316110317>
+      o
+        /
+
+        /Matplotlib Reference <https://matplotlib.org/contents.html?
+        v=20260316110317>
+      o
+        /
+
+        /SymPy Reference <http://docs.sympy.org/latest/index.html?
+        v=20260316110317>
+      o
+        /
+
+        /pandas Reference <https://pandas.pydata.org/pandas-docs/
+        stable/?v=20260316110317>
+      o
+      o About <#>
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//Run
+
+//
+
+//
+
+//
+
+//
+
+In [2]:
+//
+1
+ 
+1
+
+import pandas as pd
+
+. . .
+In [5]:
+//
+1
+ 
+1
+
+df = pd.read_csv("insurance.csv")
+
+. . .
+In [6]:
+//
+1
+ 
+1
+
+df.head()
+
+Out[6]:
+	age 	sex 	bmi 	children 	smoker 	region 	charges
+0 	19 	female 	27.900 	0 	yes 	southwest 	16884.92400
+1 	18 	male 	33.770 	1 	no 	southeast 	1725.55230
+2 	28 	male 	33.000 	3 	no 	southeast 	4449.46200
+3 	33 	male 	22.705 	0 	no 	northwest 	21984.47061
+4 	32 	male 	28.880 	0 	no 	northwest 	3866.85520
+
+. . .
+In [7]:
+//
+df.shape
+1
+ 
+1
+
+df.shape
+
+Out[7]:
+
+(1338, 7)
+
+. . .
+In [8]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+df.info()
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1338 entries, 0 to 1337
+Data columns (total 7 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   age       1338 non-null   int64  
+ 1   sex       1338 non-null   object 
+ 2   bmi       1338 non-null   float64
+ 3   children  1338 non-null   int64  
+ 4   smoker    1338 non-null   object 
+ 5   region    1338 non-null   object 
+ 6   charges   1338 non-null   float64
+dtypes: float64(2), int64(2), object(3)
+memory usage: 73.3+ KB
+
+. . .
+In [9]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+df.describe()
+
+Out[9]:
+	age 	bmi 	children 	charges
+count 	1338.000000 	1338.000000 	1338.000000 	1338.000000
+mean 	39.207025 	30.663397 	1.094918 	13270.422265
+std 	14.049960 	6.098187 	1.205493 	12110.011237
+min 	18.000000 	15.960000 	0.000000 	1121.873900
+25% 	27.000000 	26.296250 	0.000000 	4740.287150
+50% 	39.000000 	30.400000 	1.000000 	9382.033000
+75% 	51.000000 	34.693750 	2.000000 	16639.912515
+max 	64.000000 	53.130000 	5.000000 	63770.428010
+
+. . .
+In [13]:
+//
+df=df.fillna(df.mean())
+
+xxxxxxxxxx
+
+ 
+1
+
+df = df.fillna(df.mean(numeric_only=True))
+
+. . .
+In [11]:
+//
+df.info()
+
+x
+
+1
+
+df.info()
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1338 entries, 0 to 1337
+Data columns (total 7 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   age       1338 non-null   int64  
+ 1   sex       1338 non-null   object 
+ 2   bmi       1338 non-null   float64
+ 3   children  1338 non-null   int64  
+ 4   smoker    1338 non-null   object 
+ 5   region    1338 non-null   object 
+ 6   charges   1338 non-null   float64
+dtypes: float64(2), int64(2), object(3)
+memory usage: 73.3+ KB
+
+. . .
+In [16]:
+//
+1
+ 
+1
+
+corr = df.corr(numeric_only=True)
+
+. . .
+In [17]:
+//
+1
+ 
+1
+
+df.rename(columns={'MEDV':'PRICE'}, inplace=True)
+
+. . .
+In [18]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+df.info()
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1338 entries, 0 to 1337
+Data columns (total 7 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   age       1338 non-null   int64  
+ 1   sex       1338 non-null   object 
+ 2   bmi       1338 non-null   float64
+ 3   children  1338 non-null   int64  
+ 4   smoker    1338 non-null   object 
+ 5   region    1338 non-null   object 
+ 6   charges   1338 non-null   float64
+dtypes: float64(2), int64(2), object(3)
+memory usage: 73.3+ KB
+
+. . .
+In [20]:
+//
+1
+ 
+1
+
+x=df.drop('charges',axis=1)
+
+. . .
+In [21]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+y=df['charges']
+
+. . .
+In [22]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+x.head()
+
+Out[22]:
+	age 	sex 	bmi 	children 	smoker 	region
+0 	19 	female 	27.900 	0 	yes 	southwest
+1 	18 	male 	33.770 	1 	no 	southeast
+2 	28 	male 	33.000 	3 	no 	southeast
+3 	33 	male 	22.705 	0 	no 	northwest
+4 	32 	male 	28.880 	0 	no 	northwest
+
+. . .
+In [23]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+y.head()
+
+Out[23]:
+
+0    16884.92400
+1     1725.55230
+2     4449.46200
+3    21984.47061
+4     3866.85520
+Name: charges, dtype: float64
+
+. . .
+In [25]:
+//
+xtrain.shape
+
+xxxxxxxxxx
+
+ 
+1
+
+from sklearn.model_selection import train_test_split
+
+. . .
+In [26]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+xtrain, xtest, ytrain, ytest=train_test_split(x,y,test_size=0.2, random_state=0)
+
+. . .
+In [27]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+xtrain.shape
+
+Out[27]:
+
+(1070, 6)
+
+. . .
+In [28]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+ytrain.shape
+
+Out[28]:
+
+(1070,)
+
+. . .
+In [29]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+xtest.shape
+
+Out[29]:
+
+(268, 6)
+
+. . .
+In [30]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+ytest.shape
+
+Out[30]:
+
+(268,)
+
+. . .
+In [38]:
+//
+1
+ 
+1
+
+from sklearn.model_selection import train_test_split
+
+. . .
+In [44]:
+//
+1
+ 
+1
+
+from sklearn.linear_model import LinearRegression
+
+. . .
+In [45]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+regressor=LinearRegression()
+
+. . .
+In [47]:
+//
+print(X.dtypes)
+
+x
+
+1
+
+print(X.dtypes)
+
+age                   int64
+bmi                 float64
+children              int64
+sex_male               bool
+smoker_yes             bool
+region_northwest       bool
+region_southeast       bool
+region_southwest       bool
+dtype: object
+
+. . .
+In [48]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+df = df.astype(int)
+
+. . .
+In [50]:
+//
+regressor.fit(xtrain, ytrain)
+
+xxxxxxxxxx
+
+ 
+1
+
+from sklearn.model_selection import train_test_split
+
+. . .
+In [51]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+from sklearn.linear_model import LinearRegression
+
+. . .
+In [52]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=0.2, random_state=42)
+
+2
+
+​
+
+. . .
+In [53]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+​
+
+2
+
+regressor = LinearRegression()
+
+. . .
+In [54]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+​
+
+2
+
+regressor.fit(xtrain, ytrain)
+
+Out[54]:
+
+LinearRegression()
+
+*In a Jupyter environment, please rerun this cell to show the HTML
+representation or trust the notebook.
+On GitHub, the HTML representation is unable to render, please try
+loading this page with nbviewer.org.*
+LinearRegression
+
+LinearRegression()
+
+. . .
+In [55]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+​
+
+2
+
+ypred = regressor.predict(xtest)
+
+. . .
+In [56]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+
+. . .
+In [57]:
+//
+1
+ 
+1
+
+mse = mean_squared_error(ytest, ypred)
+
+. . .
+In [58]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+mae = mean_absolute_error(ytest,ypred)
+
+. . .
+In [59]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+print("Mean Square Error : ", mse)
+
+Mean Square Error :  33596915.85136146
+
+. . .
+In [60]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+print("Mean Absolute Error : ", mae)
+
+Mean Absolute Error :  4181.1944737536505
+
+. . .
+In [61]:
+//
+
+xxxxxxxxxx
+
+ 
+1
+
+from sklearn.metrics import r2_score
+
+. . .
+In [62]:
+//
+1
+ 
+1
+
+r2=r2_score(ytest, ypred)
+
+. . .
+In [63]:
+//
+r2
+1
+ 
+1
+
+r2
+
+Out[63]:
+
+0.7835929767120723
+
+. . .
+In [ ]:
+//
+1
+ 
+1
+
+​
+
+. . .
+Close <#>Expand <#>Open in Pager <#>Close <#>
